@@ -9,6 +9,19 @@ body {
       font-size: 2.5rem;
       font-family: 'Great Vibes', cursive;
     }
+  }
 
+  .form-group {
+    padding: 1em;
+    background-color: #cbe4de;
+  }
+
+  .list-container {
+    margin: 1em;
+    display: flex;
+
+    .list-group {
+      margin: inherit;
+    }
   }
 }
