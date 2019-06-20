@@ -1,7 +1,14 @@
 body {
   background-color: #EEE;
 
-  h1 {
-    color: #244751;
+  nav {
+    
+    .navbar-brand {
+      margin: auto;
+      padding: 10px;
+      font-size: 2.5rem;
+      font-family: 'Great Vibes', cursive;
+    }
+
   }
 }
