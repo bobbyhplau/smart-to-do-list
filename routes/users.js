@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router  = express.Router();
+const cookieSession = require('cookie-session');
 
 module.exports = (knex) => {
 
@@ -15,14 +16,12 @@ module.exports = (knex) => {
   });
 
   router.post("/users", (req, res) => {
-    if (err) {
-      return response.render('error', err)
-    }
-
-
+    knex
+      .select("email")
+      .from("users")
   })
 
-  
+ 
 
   return router;
 }
