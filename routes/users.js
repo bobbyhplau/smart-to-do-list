@@ -14,5 +14,15 @@ module.exports = (knex) => {
     });
   });
 
+  router.post("/users", (req, res) => {
+    if (err) {
+      return response.render('error', err)
+    }
+
+
+  })
+
+  
+
   return router;
 }
