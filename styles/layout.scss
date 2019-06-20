@@ -1,7 +1,66 @@
-body {
-  background-color: #EEE;
+html {
+  height: 100%;
 
-  h1 {
-    color: #244751;
+  body {
+    background-color: #EEE;
+    min-height: 100%;
+    background: url(https://image.freepik.com/free-photo/pastel-background-with-geometric-shapes_61607-161.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #navbar {
+
+      .navbar-brand {
+        margin: auto;
+        padding: 10px;
+        font-size: 2.5rem;
+        font-family: 'Great Vibes', cursive;
+      }
+    }
+
+    .form-group {
+      padding: 1em;
+      background-color: #cbe4de;
+      display: flex;
+      align-items: center;
+
+      div {
+        margin: 10px;
+      }
+    }
+
+
+    .list-container {
+      margin: 1em;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: flex-start;
+
+      .list-group {
+        margin: inherit;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 500px;
+        word-wrap: break-word;
+      }
+    }
+
+
+    footer {
+      height: auto;
+      bottom: 0px;
+      position: fixed;
+      min-width: 100%;
+      max-width: 100%;
+      color: #f4fffc;
+      text-align: center;
+      background-color: #7eb3a5;
+
+      p {
+        margin: 10px;
+      }
+    }
   }
 }
