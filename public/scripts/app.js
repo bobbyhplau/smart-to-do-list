@@ -10,3 +10,12 @@ $(() => {
     }
   });
 });
+
+// $(() => {
+//   $.ajax({
+//     method: "GET",
+//     url: "/api/todo"
+//   }).done((todo) => {
+//     $("#toWatch").text(todo.category).appendTo($("toWatchList"));
+//   });
+// });

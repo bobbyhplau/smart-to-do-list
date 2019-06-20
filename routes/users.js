@@ -7,7 +7,6 @@ const router = express.Router();
 module.exports = (knex) => {
 
   function doesEmailExistinTable(email, cb) {
-    let exists = false;
     knex
       .select("*")
       .from("users")
@@ -19,8 +18,8 @@ module.exports = (knex) => {
       }).catch(() => {
         cb(null);
       });
-
   }
+
   router.get("/", (req, res) => {
     knex
       .select("*")
@@ -29,7 +28,6 @@ module.exports = (knex) => {
         res.json(results);
       });
   });
-
 
   router.post("/", (req, res) => {
     doesEmailExistinTable(req.body.email, (user) => {
