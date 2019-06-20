@@ -4,8 +4,11 @@ html {
   body {
     background-color: #EEE;
     min-height: 100%;
+    background: url(https://image.freepik.com/free-photo/pastel-background-with-geometric-shapes_61607-161.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    nav {
+    #navbar {
 
       .navbar-brand {
         margin: auto;
@@ -18,20 +21,32 @@ html {
     .form-group {
       padding: 1em;
       background-color: #cbe4de;
+      display: flex;
+      align-items: center;
+
+      div {
+        margin: 10px;
+      }
     }
+
 
     .list-container {
       margin: 1em;
-      display: flex;
       justify-content: space-between;
+      display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
-      
+      align-content: flex-start;
+
       .list-group {
         margin: inherit;
+        flex-grow: 1;
+        flex-shrink: 1;
         flex-basis: 500px;
         word-wrap: break-word;
       }
     }
+
 
     footer {
       height: auto;
