@@ -6,7 +6,7 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
-    const { addTask, updateTask, deleteTask } = require('./datahelpers.js')(knex);
+    const { addTask, editTask, deleteTask } = require('./datahelpers.js')(knex);
     
   function checkForUser(userid, cb) {
     knex
@@ -45,12 +45,8 @@ module.exports = (knex) => {
 
   router.post("/", (req, res) => {
       const newTodo = req.body;
-      newTodo.category = "something";
-      newTodo.userid ="6";
       addTask(newTodo, (err, results) => {
-          console.log(err, results);
           if (err) {
-            //   res.render('error', err);
             res.status(400).send('error:' + err);
           }else{
             res.status(201).json(results);
@@ -58,16 +54,27 @@ module.exports = (knex) => {
       });
   });
 
-//   router.put("/todo/:tid/:put", (req, res) => {
-//       knex.editTask(req.body.text, (err) => {
-//           if (err) {
-//               res.render('error', err);
-//           }
-//           res.redirect("/");
-//       });
-//   });
+  router.put("/:id", (req, res) => {
+      const editTodo = req.body;
+      editTodo.id = req.params.id;
+      editTask(editTodo, (err, results) => {
+          if (err) {
+            res.status(400).send('error:' + err);
+          }else{ 
+            res.status(201).json(results);
+          }
+      });
+  });
 
-//   router.post("/todo/:tid/:delete")
+  router.post("/todo/:tid/:delete", (req, res) => {
+      deleteTask(req.body.text, (err, results) => {
+          if (err) {
+              res.status(400).send('error:' + err);
+          }else{
+              res.status(201).json(results);
+          }
+      });
+  });
 
 
 
