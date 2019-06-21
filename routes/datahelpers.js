@@ -8,15 +8,19 @@ module.exports = function makeDataHelpers(knex) {
         .insert({text: newTask.text, category: newTask.category})
         .then((results) => {
         cb(null, results);
+        }).catch((error) => {
+          cb(error);
         });
     },
 
-    changeTask: function(newTask, cb) {
+    editTask: function(newTask, cb) {
       knex("todo")
         .update({text: newTask.text, category: newTask.category})
         .then((results) => {
             cb(null, results);
-        });
+        }).catch((error) => {
+            cb(error);
+        })
     },
 
     deleteTask: function(newTask, cb) {
@@ -24,7 +28,9 @@ module.exports = function makeDataHelpers(knex) {
           .delete({text: newTask.text, category: newTask.category})
           .then((results) => {
               cb(null, results);
-          });
+          }).catch((error) => {
+              cb(error);
+          })
     },
     }
   };

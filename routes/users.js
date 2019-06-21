@@ -60,10 +60,10 @@ module.exports = (knex) => {
   });
 
   router.post("/logout", (req, res) => {
-    console.log('cookie');
     res.cookie('userID', "", -1);
     res.redirect("/");
   });
+
 
   return router;
 }
