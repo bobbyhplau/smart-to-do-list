@@ -12,6 +12,7 @@ const params = {
   q: args,
   maxResults: 5,
   printType: 'books',
+  projection: 'lite',
   fields: 'items(title)'
 }
 
