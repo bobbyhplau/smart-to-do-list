@@ -14,6 +14,7 @@ $(() => {
     method: "GET",
     url: "/api/todo"
   }).done((todo) => {
+<<<<<<< Updated upstream
     todo.forEach(function(item) {
       const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
       tags.push('<li class="mb-1">')
@@ -70,5 +71,10 @@ $(() => {
       tags.push('</a>')
       $("#toEat").append(tags.join(""))
     });
+=======
+    for (const text of todo) {
+    $("<li>").text(todo.text).appendTo($("#toWatch"));
+    }
+>>>>>>> Stashed changes
   });
 });
