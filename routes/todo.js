@@ -22,13 +22,15 @@ module.exports = (knex) => {
 
   router.get("/", (req, res) => {
     const userid = req.cookies["userID"]
+    const category = req.query.category;
     checkForUser(userid, (user) => {
       if (user) {
         knex
           .select("category", "text")
           .from("todo")
           .where({
-            userid: user.uid
+            userid: user.uid,
+            category: category
           })
           .then((results) => {
             res.json(results);
