@@ -6,13 +6,37 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
-  router.get("/", (req, res) => {
+  function checkForUser(userid, cb) {
     knex
       .select("*")
-      .from("todo")
+      .from("users")
+      .where({
+        uid: userid
+      })
       .then((results) => {
-        res.json(results);
+        cb(results[0]);
+      }).catch(() => {
+        cb(null);
       });
+  }
+
+  router.get("/", (req, res) => {
+    const userid = req.cookies["userID"]
+    checkForUser(userid, (user) => {
+      if (user) {
+        knex
+          .select("category", "text")
+          .from("todo")
+          .where({
+            userid: user.uid
+          })
+          .then((results) => {
+            res.json(results);
+          });
+      } else {
+          res.json(false);
+      }
+    })
   });
   return router;
 }
