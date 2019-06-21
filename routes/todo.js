@@ -34,7 +34,7 @@ module.exports = (knex) => {
             res.json(results);
           });
       } else {
-          res.json(false);
+          res.redirect("/")
       }
     })
   });
