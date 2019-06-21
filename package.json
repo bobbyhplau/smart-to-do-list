@@ -19,12 +19,15 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "googleapis": "^40.0.0",
     "knex": "^0.11.7",
     "knex-logger": "^0.1.0",
     "masonry-layout": "^4.2.2",
     "morgan": "^1.7.0",
     "node-sass-middleware": "^0.9.8",
-    "pg": "^6.0.2"
+    "omdb-client": "^2.0.0",
+    "pg": "^6.0.2",
+    "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
