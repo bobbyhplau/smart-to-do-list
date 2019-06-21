@@ -16,6 +16,6 @@ $(() => {
     method: "GET",
     url: "/api/todo"
   }).done((todo) => {
-    $("#toWatch").text(todo.category).appendTo($("toWatchList"));
+    $("#toWatch").text(todo.category).appendTo($("<a>"));
   });
 });
