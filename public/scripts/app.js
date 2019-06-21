@@ -1,13 +1,13 @@
-$(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/users"
-  }).done((users) => {
-    for (const user of users) {
-      $("<div>").text(user.displayname).appendTo($("body"));
-    }
-  });
-});
+// $(() => {
+//   $.ajax({
+//     method: "GET",
+//     url: "/api/users"
+//   }).done((users) => {
+//     for (const user of users) {
+//       $("<div>").text(user.displayname).appendTo($("body"));
+//     }
+//   });
+// });
 
 const populateCategory = (category, containerID) => {
     $.ajax({
