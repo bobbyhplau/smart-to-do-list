@@ -1,25 +1,74 @@
-// $(() => {
-//   $.ajax({
-//     method: "GET",
-//     url: "/api/users"
-//   }).done((users) => {
-//     for (const user of users) {
-//       $("<div>").text(user.displayname).appendTo($("body"));
-//     }
-//   });
-// });
+$(() => {
+  $.ajax({
+    method: "GET",
+    url: "/api/users"
+  }).done((users) => {
+    for (const user of users) {
+      $("<div>").text(user.displayname).appendTo($("body"));
+    }
+  });
+});
 
 $(() => {
   $.ajax({
     method: "GET",
     url: "/api/todo"
   }).done((todo) => {
-<<<<<<< HEAD
-    $("#toWatch").text(todo.category).appendTo($("<a>"));
-=======
-    for (const text of todo) {
-    $("#toWatch").text(todo.text).appendTo($("<a>"));
-    }
->>>>>>> c4b325e4cee5ee33cdf8592727888f61ff996648
+    todo.forEach(function(item) {
+      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
+      tags.push('<li class="mb-1">')
+      tags.push(item.text)
+      tags.push('</li>')
+      tags.push('</a>')
+      $("#toWatch").append(tags.join(""))
+    });
+  });
+});
+
+$(() => {
+  $.ajax({
+    method: "GET",
+    url: "/api/todo"
+  }).done((todo) => {
+    todo.forEach(function(item) {
+      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
+      tags.push('<li class="mb-1">')
+      tags.push(item.text)
+      tags.push('</li>')
+      tags.push('</a>')
+      $("#toRead").append(tags.join(""))
+    });
+  });
+});
+
+$(() => {
+  $.ajax({
+    method: "GET",
+    url: "/api/todo"
+  }).done((todo) => {
+    todo.forEach(function(item) {
+      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
+      tags.push('<li class="mb-1">')
+      tags.push(item.text)
+      tags.push('</li>')
+      tags.push('</a>')
+      $("#toBuy").append(tags.join(""))
+    });
+  });
+});
+
+$(() => {
+  $.ajax({
+    method: "GET",
+    url: "/api/todo"
+  }).done((todo) => {
+    todo.forEach(function(item) {
+      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
+      tags.push('<li class="mb-1">')
+      tags.push(item.text)
+      tags.push('</li>')
+      tags.push('</a>')
+      $("#toEat").append(tags.join(""))
+    });
   });
 });
