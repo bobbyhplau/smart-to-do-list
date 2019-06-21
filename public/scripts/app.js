@@ -9,66 +9,28 @@ $(() => {
   });
 });
 
-$(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/todo"
-  }).done((todo) => {
-    todo.forEach(function(item) {
-      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
-      tags.push('<li class="mb-1">')
-      tags.push(item.text)
-      tags.push('</li>')
-      tags.push('</a>')
-      $("#toWatch").append(tags.join(""))
+const populateCategory = (category, containerID) => {
+    $.ajax({
+      method: "GET",
+      url: "/api/todo",
+      data: {
+        category
+      }
+    }).done((todo) => {
+      todo.forEach(function(item) {
+        const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
+        tags.push('<li class="mb-1">')
+        tags.push(item.text)
+        tags.push('</li>')
+        tags.push('</a>')
+        $(containerID).append(tags.join(""))
+      });
     });
-  });
-});
+}
 
 $(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/todo"
-  }).done((todo) => {
-    todo.forEach(function(item) {
-      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
-      tags.push('<li class="mb-1">')
-      tags.push(item.text)
-      tags.push('</li>')
-      tags.push('</a>')
-      $("#toRead").append(tags.join(""))
-    });
-  });
-});
-
-$(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/todo"
-  }).done((todo) => {
-    todo.forEach(function(item) {
-      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
-      tags.push('<li class="mb-1">')
-      tags.push(item.text)
-      tags.push('</li>')
-      tags.push('</a>')
-      $("#toBuy").append(tags.join(""))
-    });
-  });
-});
-
-$(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/todo"
-  }).done((todo) => {
-    todo.forEach(function(item) {
-      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
-      tags.push('<li class="mb-1">')
-      tags.push(item.text)
-      tags.push('</li>')
-      tags.push('</a>')
-      $("#toEat").append(tags.join(""))
-    });
-  });
+  populateCategory('movie', '#toWatch')
+  populateCategory('restaurant', '#toEat')
+  populateCategory('book', '#toRead')
+  populateCategory('products', '#toBuy')  
 });
