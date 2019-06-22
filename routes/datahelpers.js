@@ -33,17 +33,17 @@ module.exports = function makeDataHelpers(knex) {
         }).catch((error) => {
           cb(error);
         })
-    } //,
+    } ,
 
-    // editCategory: function(newCategory, cb) {
-    //     knex("todos")
-    //       .where({id: newCategory.id})
-    //       .update({category: newCategory.category})
-    //       .then((results) => {
-    //         cb(null, results);
-    //       }).catch((error) => {
-    //         cb(error);
-    //       })
-    // }
+    editCategory: function(id, newCategory, cb) {
+        knex("todos")
+          .where({id: id})
+          .update({category: newCategory})
+          .then((results) => {
+            cb(null, results);
+          }).catch((error) => {
+            cb(error);
+          })
+    }
   }
 }
