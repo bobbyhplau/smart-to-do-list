@@ -88,7 +88,6 @@ module.exports = (knex) => {
     });
   });
 
-  // PUT /api/todos/123/category
   router.put("/:id/category", (req, res) => {
     editCategory(req.params.id, req.body.category, (err, results) => {
       if (err) {
