@@ -76,10 +76,10 @@ module.exports = (knex) => {
       });
   });
 
-  router.put("/:id/category", (req, res) => {
-      editCategory
+//   router.put("/:id/category", (req, res) => {
+//       const editCategory 
     
-  })
+//   })
 
 
 

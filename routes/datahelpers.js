@@ -35,15 +35,15 @@ module.exports = function makeDataHelpers(knex) {
           })
     },
 
-    editCategory: function(newCategory, cb) {
-        knex("todos")
-          .where({id: newCategory.id})
-          .update({category: newCategory.category})
-          .then((results) => {
-            cb(null, results);
-          }).catch((error) => {
-            cb(error);
-          })
-    }
-    }
+    // editCategory: function(newCategory, cb) {
+    //     knex("todos")
+    //       .where({id: newCategory.id})
+    //       .update({category: newCategory.category})
+    //       .then((results) => {
+    //         cb(null, results);
+    //       }).catch((error) => {
+    //         cb(error);
+    //       })
+    // }
+    // }
   };
