@@ -32,23 +32,25 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
   debug: true,
   outputStyle: 'expanded'
 }));
+
 app.use(express.static("public"));
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
 app.use("/api/todo", todoRoutes(knex));
 
-// Home page
+// // Home page
 app.get("/", (req, res) => {
   res.render("index");
 });
-/*
+
 // Login page
 app.get("/login", (req, res) => {
   res.render("login");
@@ -58,7 +60,7 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 })
-*/
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

@@ -87,10 +87,9 @@ module.exports = (knex) => {
         }
       });
     });
-  };
-
-  router.put("/:id/category", (req, res) => {
-    editCategory(req.params.id, req.body.category, (err, results) => {
+    
+    router.put("/:id/category", (req, res) => {
+      editCategory(req.params.id, req.body.category, (err, results) => {
       if (err) {
         res.status(400).send('error:' + err);
       } else {
@@ -98,5 +97,7 @@ module.exports = (knex) => {
       }
     }); 
   });
-
+  
   return router;
+  
+};

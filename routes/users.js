@@ -55,7 +55,6 @@ module.exports = (knex) => {
           }, "id")
           .into("users")
           .then((results) => {
-            console.log(results);
             res.cookie('userID', results[0])
             res.redirect("/");
           });
