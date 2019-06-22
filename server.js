@@ -60,7 +60,10 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a0b053a53460f95abf0b7f402d511870e55274e
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
