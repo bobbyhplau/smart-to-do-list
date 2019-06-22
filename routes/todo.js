@@ -40,7 +40,7 @@ module.exports = (knex) => {
       } else {
           res.redirect("/")
       }
-    })
+    });
   });
 
   router.post("/", (req, res) => {
@@ -66,8 +66,8 @@ module.exports = (knex) => {
       });
   });
 
-  router.post("/todo/:tid/:delete", (req, res) => {
-      deleteTask(req.body.text, (err, results) => {
+  router.delete("/:id", (req, res) => {
+      deleteTask(req.params.id, (err, results) => {
           if (err) {
               res.status(400).send('error:' + err);
           }else{
