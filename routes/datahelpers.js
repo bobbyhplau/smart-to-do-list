@@ -4,7 +4,7 @@ module.exports = function makeDataHelpers(knex) {
   return {
 
     addTask: function(newTask, cb) {
-      knex("todo")
+      knex("todos")
         .insert({text: newTask.text, category: newTask.category})
         .then((results) => {
         cb(null, results);
@@ -14,8 +14,8 @@ module.exports = function makeDataHelpers(knex) {
     },
 
     editTask: function(newTask, cb) {
-      knex("todo")
-        .where({tid: newTask.id})
+      knex("todos")
+        .where({id: newTask.id})
         .update({text: newTask.text, category: newTask.category})
         .then((results) => {
             cb(null, results);
@@ -25,8 +25,8 @@ module.exports = function makeDataHelpers(knex) {
     },
 
     deleteTask: function(id, cb) {
-        knex("todo")
-          .where({tid: id})
+        knex("todos")
+          .where({id: id})
           .del()
           .then((results) => {
               cb(null, results);
@@ -34,5 +34,16 @@ module.exports = function makeDataHelpers(knex) {
               cb(error);
           })
     },
+
+    editCategory: function(newCategory, cb) {
+        knex("todos")
+          .where({id: newCategory.id})
+          .update({category: newCategory.category})
+          .then((results) => {
+            cb(null, results);
+          }).catch((error) => {
+            cb(error);
+          })
+    }
     }
   };

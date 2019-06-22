@@ -12,12 +12,12 @@
 const populateCategory = (category, containerID) => {
     $.ajax({
       method: "GET",
-      url: "/api/todo",
+      url: "/api/todos",
       data: {
         category
       }
-    }).done((todo) => {
-      todo.forEach(function(item) {
+    }).done((todos) => {
+      todos.forEach(function(item) {
         const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
         tags.push('<li class="mb-1">')
         tags.push(item.text)

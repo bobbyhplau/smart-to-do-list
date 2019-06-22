@@ -13,7 +13,7 @@ module.exports = (knex) => {
       .select("*")
       .from("users")
       .where({
-        uid: userid
+        id: userid
       })
       .then((results) => {
         cb(results[0]);
@@ -29,9 +29,9 @@ module.exports = (knex) => {
       if (user) {
         knex
           .select("category", "text")
-          .from("todo")
+          .from("todos")
           .where({
-            userid: user.uid,
+            userid: user.id,
             category: category
           })
           .then((results) => {
@@ -75,6 +75,11 @@ module.exports = (knex) => {
           }
       });
   });
+
+  router.put("/:id/category", (req, res) => {
+      editCategory
+    
+  })
 
 
 
