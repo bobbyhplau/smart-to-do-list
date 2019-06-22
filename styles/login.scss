@@ -53,10 +53,6 @@ html {
           padding: 15px;
         }
 
-        #login {
-          padding: 20px;
-        }
-
         hr {
           height: 1px;
           width: 450px;
@@ -72,6 +68,17 @@ html {
         #register {
           margin: auto;
           padding: 20px;
+        }
+
+        .centerbutton {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #loginbutton {
+          display: inline-flex;
+          margin: 20px 0;
         }
       }
     }

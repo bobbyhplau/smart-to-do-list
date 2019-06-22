@@ -63,6 +63,18 @@ html {
             margin: auto;
             padding: 20px;
           }
+
+
+          .centerbutton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          #registerbutton {
+            display: inline-flex;
+            margin: 20px 0;
+          }
         }
       }
     }
