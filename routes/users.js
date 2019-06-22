@@ -5,8 +5,8 @@ const router = express.Router();
 
 
 module.exports = (knex) => {
-  
-  function doesEmailExistinTable(email,cb) {
+
+  function doesEmailExistinTable(email, cb) {
     knex
       .select("*")
       .from("users")
@@ -39,7 +39,7 @@ module.exports = (knex) => {
             email: req.body.email
           })
           .then((results) => {
-            res.cookie('userID', results[0].uid)
+            res.cookie('userID', results[0].id)
             res.redirect("/");
           });
       } else {
@@ -48,7 +48,7 @@ module.exports = (knex) => {
             email: req.body.email,
             displayname: 'req.body.password',
             displaypic: 'https://vanillicon.com/v2/23463b99b62a72f26ed677cc556c44e8.svg'
-          }, "uid")
+          }, "id")
           .into("users")
           .then((results) => {
             console.log(results);
