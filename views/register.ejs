@@ -24,45 +24,47 @@
 </head>
 
 <body>
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1" id="welcome">Welcome to</h5>
-      </div>
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1" id="brand">{to-do}</h5>
-      </div>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100" id="userInfo">
-        <h5 class="mb-1" id="header">Register</h5>
+  <div class="flexbox">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" id="welcome">Welcome to</h5>
+        </div>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" id="brand">{to-do}</h5>
+        </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100" id="userInfo">
+          <h5 class="mb-1" id="header">Register</h5>
 
-        <hr>
+          <hr>
 
-        <form class="form-inline" action="/api/users" method="POST">
+          <form class="form-inline" action="/api/users" method="POST">
+
+            <div>
+              <div>
+                <label class="insertEmail" for="exampleInputEmail1">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+              </div>
+
+              <div>
+                <label class="insertPassword" for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+              </div>
+            </div>
+          </form>
 
           <div>
-            <div>
-              <label class="insertEmail" for="exampleInputEmail1">Email address</label>
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div>
-
-            <div>
-              <label class="insertPassword" for="exampleInputPassword1">Password</label>
-              <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-            </div>
+            <form class="form-inline" id="register" action="/api/users" method="POST">
+              <button class="btn btn-info btn-lg" type="submit" name="register">Register</button>
+            </form>
           </div>
-        </form>
 
-        <div>
-          <form class="form-inline" id="register" action="/api/users" method="POST">
-            <button class="btn btn-info btn-lg" type="submit" name="register">Register</button>
-          </form>
         </div>
-
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 </body>
 

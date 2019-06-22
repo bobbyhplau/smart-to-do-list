@@ -2,59 +2,66 @@ html {
   height: 100%;
 
   body {
-    display: flex;
     min-height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-image:
       url(/images/background.png);
 
-    .list-group {
-      margin: auto;
-      flex-shrink: 3;
-      flex-basis: 650px;
+    .flexbox {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-      #welcome {
-        margin: auto;
-        font-size: 50px;
-      }
+      .list-group {
+        flex-shrink: 3;
+        flex-basis: 650px;
 
-      #brand {
-        margin: auto;
-        font-size: 80px;
-        font-family: 'Great Vibes', cursive;
-      }
-
-      #userInfo {
-        margin: auto;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: #f6efff;
-
-        #header {
-          padding: 25px;
-          font-size: 30px;
-        }
-
-        hr {
-          height: 2px;
-          width: 450px;
+        #welcome {
           margin: auto;
-          border-top: 3px dotted lightgrey;
+          font-size: 50px;
         }
 
-        .insertEmail {
-          padding: 15px;
-        }
-
-        .insertPassword {
-          padding: 15px;
-        }
-
-        #register {
+        #brand {
           margin: auto;
-          padding: 20px;
+          font-size: 80px;
+          font-family: 'Great Vibes', cursive;
+        }
+
+        #userInfo {
+          margin: auto;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-between;
+          background-color: #f6efff;
+
+          #header {
+            padding: 25px;
+            font-size: 30px;
+          }
+
+          hr {
+            height: 2px;
+            width: 450px;
+            margin: auto;
+            border-top: 3px dotted lightgrey;
+          }
+
+          .insertEmail {
+            padding: 15px;
+          }
+
+          .insertPassword {
+            padding: 15px;
+          }
+
+          #register {
+            margin: auto;
+            padding: 20px;
+          }
         }
       }
     }

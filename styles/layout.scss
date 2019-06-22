@@ -16,6 +16,21 @@ html {
         font-size: 2.5rem;
         font-family: 'Great Vibes', cursive;
       }
+
+      .userGreeting {
+        margin: auto;
+        color: white;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .userIcon {
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 5px;
+        border: 1px solid #cbe4de;
+      }
     }
 
     .form-group {

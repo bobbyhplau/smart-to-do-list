@@ -2,71 +2,78 @@ html {
   height: 100%;
 
   body {
-    display: flex;
     min-height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-image:
       url(/images/background.png);
 
-    .list-group {
-      margin: auto;
-      flex-shrink: 3;
-      flex-basis: 650px;
-      width: 80%;
-      height: 50%;
+    .flexbox {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-      #welcome {
-        margin: auto;
-        font-size: 50px;
-      }
+      .list-group {
+        flex-shrink: 3;
+        flex-basis: 650px;
+        width: 80%;
+        height: 50%;
 
-      #brand {
-        margin: auto;
-        font-size: 80px;
-        font-family: 'Great Vibes', cursive;
-      }
+        #welcome {
+          margin: auto;
+          font-size: 50px;
+        }
 
-      #userInfo {
-        margin: auto;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: #f6efff;
-      }
+        #brand {
+          margin: auto;
+          font-size: 80px;
+          font-family: 'Great Vibes', cursive;
+        }
 
-      #signIn {
-        padding: 15px;
-        font-size: 30px;
-      }
+        #userInfo {
+          margin: auto;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-between;
+          background-color: #f6efff;
+        }
 
-      .insertEmail {
-        padding: 15px;
-      }
+        #signIn {
+          padding: 15px;
+          font-size: 30px;
+        }
 
-      .insertPassword {
-        padding: 15px;
-      }
+        .insertEmail {
+          padding: 15px;
+        }
 
-      #login {
-        padding: 20px;
-      }
+        .insertPassword {
+          padding: 15px;
+        }
 
-      hr {
-        height: 1px;
-        width: 450px;
-        margin: auto;
-        border-top: 3px dotted lightgrey;
-      }
+        #login {
+          padding: 20px;
+        }
 
-      p {
-        margin: auto;
-        padding: 15px;
-      }
+        hr {
+          height: 1px;
+          width: 450px;
+          margin: auto;
+          border-top: 3px dotted lightgrey;
+        }
 
-      #register {
-        margin: auto;
-        padding: 20px;
+        p {
+          margin: auto;
+          padding: 15px;
+        }
+
+        #register {
+          margin: auto;
+          padding: 20px;
+        }
       }
     }
 
