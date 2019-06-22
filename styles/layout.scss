@@ -2,12 +2,19 @@ html {
   height: 100%;
 
   body {
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-image:
       url(/images/background.png);
+<<<<<<< HEAD
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
     
+=======
+
+>>>>>>> 5fa31031accdc4b589b6e8155ae47ae4c9945156
     #navbar {
 
       .navbar-brand {
@@ -16,27 +23,41 @@ html {
         font-size: 2.5rem;
         font-family: 'Great Vibes', cursive;
       }
+
+      .userGreeting {
+        margin: auto;
+        color: white;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .userIcon {
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 5px;
+        border: 1px solid #cbe4de;
+      }
     }
 
     .form-group {
       padding: 1em;
-      background-color: #cbe4de;
       display: flex;
       align-items: center;
+      background-color: #cbe4de;
 
       div {
         margin: 10px;
       }
     }
 
-
     .list-container {
       margin: 1em;
-      justify-content: space-between;
       display: flex;
-      flex-direction: row;
       flex-wrap: wrap;
+      flex-direction: row;
       align-content: flex-start;
+      justify-content: space-between;
 
       .list-group {
         margin: inherit;
@@ -44,6 +65,22 @@ html {
         flex-shrink: 1;
         flex-basis: 500px;
         word-wrap: break-word;
+
+        #filmHeader {
+          margin: auto;
+        }
+
+        #eatHeader {
+          margin: auto;
+        }
+
+        #readHeader {
+          margin: auto;
+        }
+
+        #buyHeader {
+          margin: auto;
+        }
       }
     }
 

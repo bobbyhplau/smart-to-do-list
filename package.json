@@ -19,7 +19,7 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "googleapis": "^40.0.0",
+    "goodreads-api-node": "0.0.10",
     "knex": "^0.11.7",
     "knex-logger": "^0.1.0",
     "masonry-layout": "^4.2.2",
@@ -27,6 +27,7 @@
     "node-sass-middleware": "^0.9.8",
     "omdb-client": "^2.0.0",
     "pg": "^6.0.2",
+    "string-similarity": "^3.0.0",
     "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {

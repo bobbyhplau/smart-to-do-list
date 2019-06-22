@@ -19,8 +19,6 @@ html {
       .list-group {
         flex-shrink: 3;
         flex-basis: 650px;
-        width: 80%;
-        height: 50%;
 
         #welcome {
           margin: auto;
@@ -39,40 +37,31 @@ html {
           flex-direction: column;
           justify-content: space-between;
           background-color: #f6efff;
-        }
 
-        #signIn {
-          padding: 15px;
-          font-size: 30px;
-        }
+          #header {
+            padding: 25px;
+            font-size: 30px;
+          }
 
-        .insertEmail {
-          padding: 15px;
-        }
+          hr {
+            height: 2px;
+            width: 450px;
+            margin: auto;
+            border-top: 3px dotted lightgrey;
+          }
 
-        .insertPassword {
-          padding: 15px;
-        }
+          .insertEmail {
+            padding: 15px;
+          }
 
-        #login {
-          padding: 20px;
-        }
+          .insertPassword {
+            padding: 15px;
+          }
 
-        hr {
-          height: 1px;
-          width: 450px;
-          margin: auto;
-          border-top: 3px dotted lightgrey;
-        }
-
-        p {
-          margin: auto;
-          padding: 15px;
-        }
-
-        #register {
-          margin: auto;
-          padding: 20px;
+          #register {
+            margin: auto;
+            padding: 20px;
+          }
         }
       }
     }

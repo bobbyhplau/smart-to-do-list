@@ -53,6 +53,7 @@ module.exports = (knex) => {
           }
       });
   });
+<<<<<<< HEAD
 
   router.put("/:id", (req, res) => {
       const editTodo = req.body;
@@ -65,6 +66,16 @@ module.exports = (knex) => {
           }
       });
   });
+=======
+//   router.put("/todo/:tid/:put", (req, res) => {
+//       knex.editTask(req.body.text, (err) => {
+//           if (err) {
+//               res.render('error', err);
+//           }
+//           res.redirect("/");
+//       });
+//   });
+>>>>>>> 5fa31031accdc4b589b6e8155ae47ae4c9945156
 
   router.delete("/:id", (req, res) => {
       deleteTask(req.params.id, (err, results) => {
