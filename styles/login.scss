@@ -3,6 +3,11 @@ html {
 
   body {
     display: flex;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:
+      url(/images/background.png);
 
     .list-group {
       margin: auto;
@@ -62,6 +67,21 @@ html {
       #register {
         margin: auto;
         padding: 20px;
+      }
+    }
+
+    footer {
+      height: auto;
+      bottom: 0px;
+      position: fixed;
+      min-width: 100%;
+      max-width: 100%;
+      color: #f4fffc;
+      text-align: center;
+      background-color: #7eb3a5;
+
+      p {
+        margin: 10px;
       }
     }
   }
