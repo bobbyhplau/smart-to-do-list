@@ -42,18 +42,22 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
-app.use("/api/todo", todoRoutes(knex));
+app.use("/api/todos", todoRoutes(knex));
+
+
+// Login page
+app.get("/login", (req, res) => {
+  res.render("login.ejs");
+});
 
 // Home page
 app.get("/", (req, res) => {
+  if (req.cookies.userID === "") {
+    res.render("login.ejs");
+  }
   res.render("index");
 });
 /*
-// Login page
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
 // Register page
 app.get("/register", (req, res) => {
   res.render("register");

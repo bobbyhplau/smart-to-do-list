@@ -61,7 +61,7 @@ module.exports = (knex) => {
 
   router.post("/logout", (req, res) => {
     res.cookie('userID', "", -1);
-    res.redirect("/");
+    res.status(204).send();
   });
 
 
