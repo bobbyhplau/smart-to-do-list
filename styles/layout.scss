@@ -53,10 +53,11 @@ html {
       justify-content: space-between;
 
       .list-group {
-        margin: inherit;
         flex-grow: 1;
         flex-shrink: 1;
-        flex-basis: 500px;
+        margin: inherit;
+        min-width: 300px;
+        width: 40%;
         word-wrap: break-word;
 
         #filmHeader {
@@ -80,6 +81,7 @@ html {
     footer {
       height: auto;
       bottom: 0px;
+      z-index: 2;
       position: fixed;
       min-width: 100%;
       max-width: 100%;
