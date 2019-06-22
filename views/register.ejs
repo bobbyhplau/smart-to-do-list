@@ -4,7 +4,7 @@
 <head>
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/login.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/register.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
   <!--Bootstrap & font-->
@@ -19,7 +19,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>to-do | Login</title>
+  <title>to-do | Register</title>
   <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
 </head>
 
@@ -37,7 +37,9 @@
     </a>
     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
       <div class="d-flex w-100" id="userInfo">
-        <h5 class="mb-1" id="signIn">Sign in</h5>
+        <h5 class="mb-1" id="header">Register</h5>
+
+        <hr>
 
         <form class="form-inline" action="/api/users" method="POST">
 
@@ -56,17 +58,7 @@
         </form>
 
         <div>
-          <form class="form-inline" id="login" action="/" method="POST">
-            <button class="btn btn-primary btn-lg" name="login">Login</button>
-          </form>
-        </div>
-
-        <hr>
-
-        <p class="mb-1">Don't have an account?</p>
-
-        <div>
-          <form class="form-inline" id="register" action="/register" method="GET">
+          <form class="form-inline" id="register" action="/api/users" method="POST">
             <button class="btn btn-info btn-lg" type="submit" name="register">Register</button>
           </form>
         </div>

@@ -57,7 +57,6 @@ module.exports = (knex) => {
           }
       });
   });
-
 //   router.put("/todo/:tid/:put", (req, res) => {
 //       knex.editTask(req.body.text, (err) => {
 //           if (err) {

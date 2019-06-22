@@ -1,0 +1,54 @@
+html {
+  height: 100%;
+}
+html body {
+  display: flex;
+}
+html body .list-group {
+  margin: auto;
+  flex-shrink: 3;
+  flex-basis: 650px;
+}
+html body .list-group #welcome {
+  margin: auto;
+  font-size: 50px;
+}
+html body .list-group #brand {
+  margin: auto;
+  font-size: 80px;
+  font-family: "Great Vibes", cursive;
+}
+html body .list-group #userInfo {
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f6efff;
+}
+html body .list-group #signIn {
+  padding: 15px;
+  font-size: 30px;
+}
+html body .list-group .insertEmail {
+  padding: 15px;
+}
+html body .list-group .insertPassword {
+  padding: 15px;
+}
+html body .list-group #login {
+  padding: 20px;
+}
+html body .list-group hr {
+  height: 1px;
+  width: 450px;
+  margin: auto;
+  border-top: 3px dotted lightgrey;
+}
+html body .list-group p {
+  margin: auto;
+  padding: 15px;
+}
+html body .list-group #register {
+  margin: auto;
+  padding: 20px;
+}

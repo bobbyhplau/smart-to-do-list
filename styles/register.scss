@@ -1,0 +1,57 @@
+html {
+  height: 100%;
+
+  body {
+    display: flex;
+
+    .list-group {
+      margin: auto;
+      flex-shrink: 3;
+      flex-basis: 650px;
+
+      #welcome {
+        margin: auto;
+        font-size: 50px;
+      }
+
+      #brand {
+        margin: auto;
+        font-size: 80px;
+        font-family: 'Great Vibes', cursive;
+      }
+
+      #userInfo {
+        margin: auto;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #f6efff;
+
+        #header {
+          padding: 25px;
+          font-size: 30px;
+        }
+
+        hr {
+          height: 2px;
+          width: 450px;
+          margin: auto;
+          border-top: 3px dotted lightgrey;
+        }
+
+        .insertEmail {
+          padding: 15px;
+        }
+
+        .insertPassword {
+          padding: 15px;
+        }
+
+        #register {
+          margin: auto;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
