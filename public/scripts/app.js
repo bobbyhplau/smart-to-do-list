@@ -12,7 +12,7 @@
 const populateCategory = (category, containerID) => {
   $.ajax({
     method: "GET",
-    url: "/api/todos",
+    url: "/api/todo",
     data: {
       category
     }

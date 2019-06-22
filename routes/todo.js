@@ -5,7 +5,7 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
-  const { addTask, updateTask, deleteTask } = require('../lib/datahelpers.js')(knex);
+  const { addTask /*, updateTask, deleteTask*/ } = require('../lib/datahelpers.js')(knex);
   const categorize = require('../lib/smart-search.js').categorize;
 
   function checkForUser(userid, cb) {
@@ -65,34 +65,34 @@ module.exports = (knex) => {
         });
       })
   });
-
-  router.put("/:id", (req, res) => {
-    const editTodo = req.body;
-    editTodo.id = req.params.id;
-    editTask(editTodo, (err, results) => {
-      if (err) {
-        res.status(400).send('error:' + err);
-      } else {
-        res.status(201).json(results);
-      }
+  /*
+    router.put("/:id", (req, res) => {
+      const editTodo = req.body;
+      editTodo.id = req.params.id;
+      editTask(editTodo, (err, results) => {
+        if (err) {
+          res.status(400).send('error:' + err);
+        } else {
+          res.status(201).json(results);
+        }
+      });
     });
-  });
 
-  router.delete("/:id", (req, res) => {
-    deleteTask(req.params.id, (err, results) => {
-      if (err) {
-        res.status(400).send('error:' + err);
-      } else {
-        res.status(201).json(results);
-      }
+    router.delete("/:id", (req, res) => {
+      deleteTask(req.params.id, (err, results) => {
+        if (err) {
+          res.status(400).send('error:' + err);
+        } else {
+          res.status(201).json(results);
+        }
+      });
     });
-  });
 
-  //   router.put("/:id/category", (req, res) => {
-  //       const editCategory
+    //   router.put("/:id/category", (req, res) => {
+    //       const editCategory
 
-  //   })
-
+    //   })
+  */
 
 
   return router;
