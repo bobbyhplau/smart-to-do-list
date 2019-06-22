@@ -5,9 +5,9 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
-  const { addTask /*, updateTask, deleteTask*/ } = require('../lib/datahelpers.js')(knex);
+  const { addTask, editTask, deleteTask, editCategory } = require('../lib/datahelpers.js')(knex);
   const categorize = require('../lib/smart-search.js').categorize;
-
+  
   function checkForUser(userid, cb) {
     knex
       .select("*")
@@ -38,7 +38,7 @@ module.exports = (knex) => {
             res.json(results);
           });
       } else {
-        res.redirect("/")
+          res.redirect("/")
       }
     });
   });
@@ -65,7 +65,7 @@ module.exports = (knex) => {
         });
       })
   });
-  /*
+  
     router.put("/:id", (req, res) => {
       const editTodo = req.body;
       editTodo.id = req.params.id;
@@ -87,13 +87,17 @@ module.exports = (knex) => {
         }
       });
     });
-
-    //   router.put("/:id/category", (req, res) => {
-    //       const editCategory
-
-    //   })
-  */
-
-
+    
+    router.put("/:id/category", (req, res) => {
+      editCategory(req.params.id, req.body.category, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+      } else {
+        res.status(201).json(results);
+      }
+    }); 
+  });
+  
   return router;
-}
+  
+};

@@ -8,6 +8,7 @@ html {
     background-image:
       url(/images/background.png);
 
+
     #navbar {
 
       .navbar-brand {
@@ -24,57 +25,46 @@ html {
         margin-left: 20px;
         margin-right: 20px;
       }
-
-      .userIcon {
-        margin-left: 20px;
-        margin-right: 20px;
-        border-radius: 5px;
-        border: 1px solid #cbe4de;
-      }
     }
 
-
-    .form-group {
-      padding: 1em;
+    .flexbox {
+      height: 85vh;
+      width: 100vw;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      background-color: #cbe4de;
 
-      div {
-        margin: 10px;
-      }
-    }
+      #userProfile {
+        width: 50vw;
+        height: 50vh;
+        background-color: #cfd7f1;
 
-    .list-container {
-      margin: 1em;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      align-content: flex-start;
-      justify-content: space-evenly;
+        .card-header {
+          height: 20vh;
 
-      .list-group {
-        flex-grow: 1;
-        flex-shrink: 1;
-        margin: inherit;
-        min-width: 300px;
-        width: 40%;
-        word-wrap: break-word;
+          .userAvatar {
+            height: 7vw;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+            border: 2px solid #c7eaf1;
+          }
 
-        #filmHeader {
-          margin: auto;
+          .userName {
+            margin: auto;
+            font-size: 2vw;
+            text-align: center;
+          }
         }
 
-        #eatHeader {
-          margin: auto;
-        }
-
-        #readHeader {
-          margin: auto;
-        }
-
-        #buyHeader {
-          margin: auto;
+        .buttons {
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
         }
       }
     }

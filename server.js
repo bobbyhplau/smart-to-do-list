@@ -32,12 +32,14 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
   debug: true,
   outputStyle: 'expanded'
 }));
+
 app.use(express.static("public"));
 
 // Mount all resource routes
@@ -50,19 +52,18 @@ app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
 
-// Home page
+// // Home page
 app.get("/", (req, res) => {
   if (req.cookies.userID === "") {
     res.render("login.ejs");
   }
   res.render("index");
 });
-/*
+
 // Register page
 app.get("/register", (req, res) => {
   res.render("register");
 })
-*/
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

@@ -29,6 +29,10 @@ module.exports = (knex) => {
       });
   });
 
+  router.get("/profile", (req, res) => {
+    res.render("profile");
+  })
+
   router.post("/", (req, res) => {
     doesEmailExistinTable(req.body.email, (user) => {
       if (user) {
@@ -51,7 +55,6 @@ module.exports = (knex) => {
           }, "id")
           .into("users")
           .then((results) => {
-            console.log(results);
             res.cookie('userID', results[0])
             res.redirect("/");
           });

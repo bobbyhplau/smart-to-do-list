@@ -19,8 +19,7 @@ html {
       .list-group {
         flex-shrink: 3;
         flex-basis: 650px;
-        width: 80%;
-        height: 50%;
+        width: 50%;
 
         #welcome {
           margin: auto;
@@ -80,6 +79,7 @@ html {
     footer {
       height: auto;
       bottom: 0px;
+      z-index: 2;
       position: fixed;
       min-width: 100%;
       max-width: 100%;
