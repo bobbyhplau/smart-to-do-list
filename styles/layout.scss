@@ -11,6 +11,7 @@ html {
     #navbar {
 
       .navbar-brand {
+        color: white;
         margin: auto;
         padding: 10px;
         font-size: 2.5rem;
@@ -26,22 +27,29 @@ html {
       }
 
       .userIcon {
-        margin-left: 20px;
+        transition: border 0.5s ease;
+        opacity: .9;
         margin-right: 20px;
-        border-radius: 5px;
-        border: 1px solid #cbe4de;
+        border-radius: 10px;
+        border: 2px solid #6ea595;
+      }
+
+      .userIcon:hover {
+        opacity: 1;
+        margin-right: 20px;
+        border-radius: 10px;
+        border: 2px solid #cae8e0;
       }
     }
 
-
-    .form-group {
+    #enterField {
       padding: 1em;
       display: flex;
       align-items: center;
       background-color: #cbe4de;
 
       div {
-        margin: 10px;
+        height: 5vh;
       }
     }
 

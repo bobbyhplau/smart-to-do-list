@@ -8,7 +8,7 @@
   
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/login.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/errorpage.css" type="text/css" />
   
     <!--Bootstrap & font-->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet"
@@ -20,16 +20,26 @@
     <title>oh dear, something has gone awry</title>
 </head>
 <body>
-    <h1><b>oh dear, is that a 404 ERROR I'm sensing?</b></h1>
-    <iframe src="https://giphy.com/embed/14aUO0Mf7dWDXW" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/embarrassed-facepalm-panda-14aUO0Mf7dWDXW">via GIPHY</a></p>    <div>
-        <p>The page you are looking for might have been removed.</p>
-        <p>Or maybe it has been renamed?</p>
-        <p>Or maybe it is temporarily unavailable?</p>
-        <p>Or maybe we made a mistake?</p>
-        <p>Or maybe you did?</p>
-        <p>Why dont you try <a href="http://localhost:8080/login">this link?</a> </p> 
+    <div>
+        <h1 class="mb-1" name="error-message">oh dear, is that a 404 ERROR I'm sensing?</h1>
     </div>
-
+    <div>
+        <iframe src="https://giphy.com/embed/14aUO0Mf7dWDXW" width="480" height="480" frameBorder="0" class="gif" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/embarrassed-facepalm-panda-14aUO0Mf7dWDXW">via GIPHY</a></p>
+    </div>
+    <div class="flexbox">
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <div class="d-flex w-100 justify-content-between" id="error-list">
+            <p>The page you are looking for might have been removed.</p>
+            <p>Or maybe it has been renamed?</p>
+            <p>Or maybe it is temporarily unavailable?</p>
+            <p>Or maybe we made a mistake?</p>
+            <p>Or maybe you did?</p>
+            <p>Why dont you try <a href="http://localhost:8080/login">this link?</a> </p> 
+    </div>
+    </a>
+    </div>
+    </div>
 </body>
 
 <footer>
