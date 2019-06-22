@@ -47,12 +47,11 @@
     </div>
   </nav>
 
-  <form class="form-group" action="/api/todos" method="POST">
-    <input class="form-control form-control-lg" type="text" name="text" placeholder="Add new list item!" id="inputLarge">
+
+    <input class="form-control form-control-lg" type="text" name='todo_text' placeholder="Add new list item!" id="inputLarge">
     <div>
-      <button type="submit" class="btn btn-info">Submit</button>
+      <button id='todo-maker-button' type="submit" class="btn btn-info">Submit</button>
     </div>
-  </form>
 
   <div class="list-container">
     <div class="list-group">
