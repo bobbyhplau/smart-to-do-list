@@ -10,7 +10,7 @@
 
   <!--Bootstrap-->
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-9NlqO4dP5KfioUGS568UFwM3lbWf3Uj3Qb7FBHuIuhLoDp3ZgAqPE1/MYLEBPZYM" crossorigin="anonymous">
+    integrity="sha384-9NlqO4dP5KfioUGS568UFwM3lbWf3Uj3Qb7FBHuIuhLoDp3ZgAqPE1/MYLEBPZYM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" type="text/css" />
 
   <!--Logo Font-->
@@ -21,11 +21,13 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
 
   <title>to-do | home</title>
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/png" /></head>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
+</head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
     <a class="navbar-brand" href="#">{to-do}</a>
+    <p class="userGreeting">Welcome back, Neezy!</p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
       aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,6 +35,8 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav ml-auto">
+        <a href="/profile">
+          <img class="userIcon" src="https://vanillicon.com/v2/d14ffd41334ec4b4b3f2c0d55c38be6f.svg" /></a>
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
@@ -43,6 +47,7 @@
     </div>
   </nav>
 
+
     <input class="form-control form-control-lg" type="text" name='todo_text' placeholder="Add new list item!" id="inputLarge">
     <div>
       <button id='todo-maker-button' type="submit" class="btn btn-info">Submit</button>
@@ -52,7 +57,7 @@
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Films / Series</h5>
+          <h5 class="mb-1" id="filmHeader">Films / Series</h5>
         </div>
       </a>
       <div id="toWatch"></div>
@@ -60,7 +65,7 @@
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Restaurants, cafes, etc.</h5>
+          <h5 class="mb-1" id="eatHeader">Restaurants, cafes, etc.</h5>
         </div>
       </a>
       <div id="toEat"></div>
@@ -68,7 +73,7 @@
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Books</h5>
+          <h5 class="mb-1" id="readHeader">Books</h5>
         </div>
       </a>
       <div id="toRead"></div>
@@ -76,7 +81,7 @@
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Products</h5>
+          <h5 class="mb-1" id="buyHeader">Products</h5>
         </div>
       </a>
       <div id="toBuy"></div>
