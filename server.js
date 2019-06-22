@@ -48,7 +48,7 @@ app.use("/api/todo", todoRoutes(knex));
 app.get("/", (req, res) => {
   res.render("index");
 });
-/*
+
 // Login page
 app.get("/login", (req, res) => {
   res.render("login");
@@ -58,7 +58,6 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 })
-*/
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

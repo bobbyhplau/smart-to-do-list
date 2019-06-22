@@ -19,6 +19,7 @@ html {
       .list-group {
         flex-shrink: 3;
         flex-basis: 650px;
+        width: 50%;
 
         #welcome {
           margin: auto;
@@ -45,7 +46,7 @@ html {
 
           hr {
             height: 2px;
-            width: 450px;
+            width: 100px;
             margin: auto;
             border-top: 3px dotted lightgrey;
           }
