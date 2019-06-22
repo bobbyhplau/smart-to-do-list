@@ -17,7 +17,7 @@ const knexLogger = require('knex-logger');
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
-const todoRoutes = require("./routes/todo");
+const todoRoutes = require("./routes/todos");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -42,13 +42,13 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
-app.use("/api/todos", todoRoutes(knex));
+app.use("/api/todo", todoRoutes(knex));
 
 // Home page
 app.get("/", (req, res) => {
   res.render("index");
 });
-
+/*
 // Login page
 app.get("/login", (req, res) => {
   res.render("login");
@@ -58,6 +58,7 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 })
+*/
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

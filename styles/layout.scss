@@ -50,13 +50,18 @@ html {
       flex-wrap: wrap;
       flex-direction: row;
       align-content: flex-start;
-      justify-content: space-between;
+      justify-content: space-evenly;
 
       .list-group {
-        margin: inherit;
         flex-grow: 1;
         flex-shrink: 1;
-        flex-basis: 500px;
+<<<<<<< HEAD
+        margin: inherit;
+        min-width: 300px;
+        width: 40%;
+=======
+        max-width: 450px;
+>>>>>>> 9a1b6030928a3de932f1ed0d76da7bce50521604
         word-wrap: break-word;
 
         #filmHeader {
@@ -80,6 +85,7 @@ html {
     footer {
       height: auto;
       bottom: 0px;
+      z-index: 2;
       position: fixed;
       min-width: 100%;
       max-width: 100%;

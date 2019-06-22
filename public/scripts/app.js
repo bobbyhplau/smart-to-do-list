@@ -12,7 +12,7 @@
 const populateCategory = (category, containerID) => {
   $.ajax({
     method: "GET",
-    url: "/api/todos",
+    url: "/api/todo",
     data: {
       category
     }
@@ -27,7 +27,12 @@ const populateCategory = (category, containerID) => {
     });
   });
 };
-
+const clearCategories = () => {
+  $('#toWatch').empty();
+  $('#toRead').empty();
+  $('#toBuy').empty();
+  $('#toEat').empty();
+};
 
 $(() => {
   populateCategory('movie', '#toWatch')
@@ -39,7 +44,8 @@ $(() => {
     event.preventDefault();
     const input = $('#inputLarge').serialize();
 
-    $.post('/api/todo', input).then(function() {
+    $.post('/api/todos', input).then(function() {
+      clearCategories();
       populateCategory('movie', '#toWatch');
       populateCategory('restaurant', '#toEat');
       populateCategory('book', '#toRead');

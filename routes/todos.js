@@ -65,28 +65,29 @@ module.exports = (knex) => {
         });
       })
   });
-
-  router.put("/:id", (req, res) => {
-    const editTodo = req.body;
-    editTodo.id = req.params.id;
-    editTask(editTodo, (err, results) => {
-      if (err) {
-        res.status(400).send('error:' + err);
-      } else {
-        res.status(201).json(results);
-      }
+  
+    router.put("/:id", (req, res) => {
+      const editTodo = req.body;
+      editTodo.id = req.params.id;
+      editTask(editTodo, (err, results) => {
+        if (err) {
+          res.status(400).send('error:' + err);
+        } else {
+          res.status(201).json(results);
+        }
+      });
     });
-  });
 
-  router.delete("/:id", (req, res) => {
-    deleteTask(req.params.id, (err, results) => {
-      if (err) {
-        res.status(400).send('error:' + err);
-      } else {
-        res.status(201).json(results);
-      }
+    router.delete("/:id", (req, res) => {
+      deleteTask(req.params.id, (err, results) => {
+        if (err) {
+          res.status(400).send('error:' + err);
+        } else {
+          res.status(201).json(results);
+        }
+      });
     });
-  });
+  };
 
   router.put("/:id/category", (req, res) => {
     editCategory(req.params.id, req.body.category, (err, results) => {
@@ -99,4 +100,3 @@ module.exports = (knex) => {
   });
 
   return router;
-}

@@ -29,6 +29,10 @@ module.exports = (knex) => {
       });
   });
 
+  router.get("/profile", (req, res) => {
+    res.render("profile");
+  })
+
   router.post("/", (req, res) => {
     doesEmailExistinTable(req.body.email, (user) => {
       if (user) {
