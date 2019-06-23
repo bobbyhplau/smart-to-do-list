@@ -22,6 +22,8 @@
   <script type="text/javascript" src="/scripts/app.js"></script>
   <!-- Nav Bar Javascript Catches -->
   <script type='text/javascript' src='/scripts/navbar.js'></script>
+  <!-- Font Awesome Images -->
+  <script src="https://kit.fontawesome.com/eebbaf98dd.js"></script>
 
   <title>to-do | home</title>
   <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
@@ -58,45 +60,28 @@
     <div class='input-group-append'>
       <button id='todo-maker-button' type="submit" class="btn btn-info">Submit</button>
     </div>
-
   </div>
 
   <div class="list-container">
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" id="filmHeader">Films / Series</h5>
-        </div>
-      </a>
+    <ul class="list-group">
+      <li class='list-titles list-group-item active'>Films / Series</li>
       <div id="toWatch"></div>
-    </div>
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" id="eatHeader">Restaurants, cafes, etc.</h5>
-        </div>
-      </a>
+    </ul>
+    <ul class="list-group">
+      <li class='list-titles list-group-item active'>Restaurants, Cafes, Etc.</li>
       <div id="toEat"></div>
-    </div>
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" id="readHeader">Books</h5>
-        </div>
-      </a>
+    </ul>
+    <ul class="list-group">
+      <li class='list-titles list-group-item active'>Books</li>
       <div id="toRead"></div>
-    </div>
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" id="buyHeader">Products</h5>
-        </div>
-      </a>
+    </ul>
+    <ul class="list-group">
+      <li class='list-titles list-group-item active'>Products</li>
       <div id="toBuy"></div>
-    </div>
+    </ul>
   </div>
 
-  <footer>
+<!--   <footer>
     <p><b>Made With ♥ By Bitscuits</b></p>
-  </footer>
+  </footer> -->
 </body>
