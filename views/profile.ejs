@@ -49,15 +49,23 @@
   <div class="flexbox">
     <div class="card text-white mb-3" id="userProfile">
       <div class="card-header">
-        <a href="http://vanillicon.com"><img class="userAvatar"
-            src="https://vanillicon.com/v2/d14ffd41334ec4b4b3f2c0d55c38be6f.svg" /></a>
+        <img class="userAvatar" src="https://vanillicon.com/v2/d14ffd41334ec4b4b3f2c0d55c38be6f.svg" /></a>
         <p class="userName">Neezy</p>
       </div>
       <div class="buttons">
         <div class="changeUsername">
+          <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
+            <input class="form-control form-control-lg" type="text" placeholder="Pick a name! Any name!"
+              id="inputLarge">
+          </div>
           <button type="button" class="btn btn-success btn-lg">Change Username</button>
         </div>
         <div class="changeAvatar">
+          <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+          </div>
           <button type="button" class="btn btn-success btn-lg">Change Avatar</button>
         </div>
       </div>
