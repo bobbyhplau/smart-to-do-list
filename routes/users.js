@@ -71,6 +71,10 @@ module.exports = (knex) => {
     res.status(204).send();
   });
 
+  router.get("/error", (req, res) => {
+    res.render("error");
+  });
+
 
   return router;
 }
