@@ -45,6 +45,7 @@ html {
         width: 50vw;
         height: 50vh;
         background-color: #cfd7f1;
+        border-radius: 10px;
 
         .card-header {
           height: 20vh;
@@ -53,7 +54,7 @@ html {
             height: 7vw;
             display: block;
             margin: auto;
-            border-radius: 10px;
+            border-radius: inherit;
             border: 2px solid #c7eaf1;
           }
 
@@ -62,6 +63,7 @@ html {
             font-size: 2vw;
             text-align: center;
           }
+          
         }
 
         .buttons {
@@ -71,6 +73,20 @@ html {
           flex-direction: row;
           justify-content: space-evenly;
           align-items: center;
+
+          .changeUsername {
+            margin: auto;
+            padding: 50px 10px;
+            border-radius: inherit;
+            border: 3px solid lavender;
+          }
+
+          .changeAvatar {
+            margin: auto;
+            padding: 55px 10px;
+            border-radius: inherit;
+            border: 3px solid lavender;
+          }
         }
       }
     }
