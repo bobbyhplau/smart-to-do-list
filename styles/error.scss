@@ -1,0 +1,48 @@
+html {
+  height: 100%;
+
+  body {
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:
+      url(/images/background.png);
+
+    .flexbox {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .list-group {
+        flex-shrink: 3;
+        flex-basis: 650px;
+        width: 50%;
+
+        #error-list {
+          font-family: 'Great Vibes', cursive;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  footer {
+    height: auto;
+    bottom: 0px;
+    z-index: 2;
+    position: fixed;
+    min-width: 100%;
+    max-width: 100%;
+    color: #f4fffc;
+    text-align: center;
+    background-color: #7eb3a5;
+
+    p {
+      margin: 10px;
+    }
+  }
+
+}
