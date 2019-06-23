@@ -19,15 +19,23 @@ const populateCategory = (category, containerID) => {
   }).done((todos) => {
     console.log(todos);
     todos.forEach(function(item) {
-      const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
-      tags.push('<li class="mb-1">')
+      //const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
+      //tags.push('<li class="mb-1">')
+      const tags = ['<li class="list-group-item non-title">'];
+      tags.push('<div class="leftsideoftext">');
+      tags.push('<i class="far fa-square"></i>');
       tags.push(item.text)
+      tags.push('</div><div class="toolbar">');
+      tags.push('<i class="far fa-edit"></i>');
+      tags.push('<i class="fas fa-exchange-alt"></i>');
+      tags.push('<i class="fas fa-trash-alt"></i>');
+      tags.push('</div>');
       tags.push('</li>')
-      tags.push('</a>')
       $(containerID).append(tags.join(""))
     });
   });
 };
+
 const clearCategories = () => {
   $('#toWatch').empty();
   $('#toRead').empty();
