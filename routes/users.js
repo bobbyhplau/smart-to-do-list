@@ -6,6 +6,7 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
+  // function for editing displayname, works on postman, but not quite on the page
   function editDisplayName(displayname, newDisplayName, cb) {
     knex("users")
       .where({displayname: displayname})
@@ -48,21 +49,22 @@ module.exports = (knex) => {
   router.get("/profile", (req, res) => {
     res.render("profile");
   })
+  
+  // route for changing displayname, something is not working about this
+  // router.post("/profile", (req, res) => {
+  //   console.log(req.body.displayname, req.body.newDisplayName)
+  //   editDisplayName(req.body.displayname, req.body.newDisplayName, (err, results) => {
+  //     if (err) {
+  //       res.status(400).send('error:' + err);
+  //       return; 
+  //     } else {
+  //       res.status(201).json(results);
+  //       return;
+  //     }
+  //   })
 
-  router.put("/profile", (req, res) => {
-    console.log(req.body);
-    editDisplayName(req.body.displayname, req.body.newDisplayName, (err, results) => {
-      if (err) {
-        res.status(400).send('error:' + err);
-        return; 
-      } else {
-        res.status(201).json(results);
-        return;
-      }
-    })
-
-    res.render("profile");
-  })
+  //   res.render("profile");
+  // })
 
   router.post("/", (req, res) => {
     doesEmailExistinTable(req.body.email, (user) => {
@@ -97,7 +99,6 @@ module.exports = (knex) => {
     res.cookie('userID', "", -1);
     res.status(204).send();
   });
-
 
   return router;
 }
