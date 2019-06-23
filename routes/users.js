@@ -6,14 +6,14 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
-  function editDisplayName(id, newDisplayName, cb) {
+  function editDisplayName(displayname, newDisplayName, cb) {
     knex("users")
-      .where({id: id})
+      .where({displayname: displayname})
       .update({displayname: newDisplayName})
       .then((results) => {
-        cb(null, results);
+        return cb(null, results);
       }).catch((error) => {
-        cb(error);
+        return cb(error, null);
       });
         
   }
@@ -50,11 +50,14 @@ module.exports = (knex) => {
   })
 
   router.put("/profile", (req, res) => {
-    editDisplayName(req.body.id, (err, results) => {
+    console.log(req.body);
+    editDisplayName(req.body.displayname, req.body.newDisplayName, (err, results) => {
       if (err) {
         res.status(400).send('error:' + err);
+        return; 
       } else {
         res.status(201).json(results);
+        return;
       }
     })
 
@@ -78,7 +81,7 @@ module.exports = (knex) => {
         knex
           .insert({
             email: req.body.email,
-            displayname: 'req.body.password',
+            displayname: req.body.displayname,
             displaypic: 'https://vanillicon.com/v2/23463b99b62a72f26ed677cc556c44e8.svg'
           }, "id")
           .into("users")
