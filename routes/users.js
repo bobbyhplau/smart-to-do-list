@@ -6,6 +6,18 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
+  function editDisplayName(id, newDisplayName, cb) {
+    knex("users")
+      .where({id: id})
+      .update({displayname: newDisplayName})
+      .then((results) => {
+        cb(null, results);
+      }).catch((error) => {
+        cb(error);
+      });
+        
+  }
+
   function doesEmailExistinTable(email, cb) {
     knex
       .select("*")
@@ -29,11 +41,23 @@ module.exports = (knex) => {
       });
   });
 
+  // router.get("/error", (req, res) => {
+  //   res.render("error");
+  // });
+
   router.get("/profile", (req, res) => {
     res.render("profile");
   })
 
-  router.post("/profile", (req, res) => {
+  router.put("/profile", (req, res) => {
+    editDisplayName(req.body.id, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+      } else {
+        res.status(201).json(results);
+      }
+    })
+
     res.render("profile");
   })
 
@@ -69,10 +93,6 @@ module.exports = (knex) => {
   router.post("/logout", (req, res) => {
     res.cookie('userID', "", -1);
     res.status(204).send();
-  });
-
-  router.get("/error", (req, res) => {
-    res.render("error");
   });
 
 
