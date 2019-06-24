@@ -1,4 +1,12 @@
-# Node Skeleton
+# to-do!
+
+## Overview
+
+To-do is a full stack web application that provides users with a fully-functional taskmaster. The application groups tasks into four main categories: toWatch(movies/series), toEat(restaurants), toRead(books), and toBuy(products). Users are able to add new tasks using a singular input box. These tasks are then automatically sorted into its rightful category through an API-based algorithm. Users are able to delete a task upon completion, reorder entries based on priority-level, as well as update their profile in the profile page.
+
+The project process involves a comprehensive undertaking of the many aspects of full stack web development. The back-end illustrates the understanding of JavaScript, jQuery, Ajax, modules, APIs, routing, and the innerworkings of HTTP. On the other hand, the front-end exhibits skills in tools such as HTML, CSS, SCSS, and Sass. This project also heavily involves the use of database management systems and includes the implementation of tools like PSQL and Knex.
+
+## Node Skeleton
 
 ## Project Setup
 
@@ -23,7 +31,32 @@
 7. Run the server: `npm run local`
 8. Visit `http://localhost:8080/`
 
+## Screenshots
+
+!["Description here](URL here)
+!["Description here](URL here)
+!["Description here](URL here)
+!["Description here](URL here)
+
 ## Dependencies
 
 - Node 5.10.x or above
 - NPM 3.8.x or above
+- Body-parser
+- Bootstrap
+- Cookie-parser
+- Cookie-session
+- dotenv
+- ejs
+- express
+- goodreads-api-node
+- Knex
+- Knex-logger
+- masonry-layout
+- morgan
+- node-sass-middleware
+- omdb-client
+- pg
+- string-similarity
+- yelp-fusion
+
