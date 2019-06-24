@@ -7,7 +7,7 @@ module.exports = (knex) => {
 
   const { addTask, editTask, deleteTask, editCategory } = require('../lib/datahelpers.js')(knex);
   const categorize = require('../lib/smart-search.js').categorize;
-  
+
   function checkForUser(userid, cb) {
     knex
       .select("*")
@@ -28,7 +28,7 @@ module.exports = (knex) => {
     checkForUser(userid, (user) => {
       if (user) {
         knex
-          .select("category", "text")
+          .select("category", "text", "id")
           .from("todos")
           .where({
             userid: user.id,
@@ -38,7 +38,7 @@ module.exports = (knex) => {
             res.json(results);
           });
       } else {
-          res.redirect("/")
+        res.redirect("/")
       }
     });
   });
@@ -65,39 +65,41 @@ module.exports = (knex) => {
         });
       })
   });
-  
-    router.put("/:id", (req, res) => {
-      const editTodo = req.body;
-      editTodo.id = req.params.id;
-      editTask(editTodo, (err, results) => {
-        if (err) {
-          res.status(400).send('error:' + err);
-        } else {
-          res.status(201).json(results);
-        }
-      });
-    });
 
-    router.delete("/:id", (req, res) => {
-      deleteTask(req.params.id, (err, results) => {
-        if (err) {
-          res.status(400).send('error:' + err);
-        } else {
-          res.status(201).json(results);
-        }
-      });
-    });
-    
-    router.put("/:id/category", (req, res) => {
-      editCategory(req.params.id, req.body.category, (err, results) => {
+  router.put("/:id/toCategory/:category", (req, res) => {
+    editCategory(req.params.id, req.params.category, (err, results) => {
       if (err) {
         res.status(400).send('error:' + err);
       } else {
         res.status(201).json(results);
       }
-    }); 
+    });
   });
-  
+
+  router.put("/:id", (req, res) => {
+    const editTodo = req.body;
+    editTodo.id = req.params.id;
+    editTask(editTodo, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+      } else {
+        res.status(201).json(results);
+      }
+    });
+  });
+
+  router.delete("/:id", (req, res) => {
+    let tid = Number(req.params.id);
+    deleteTask(tid, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+      } else {
+        res.status(201).json(results);
+      }
+    });
+  });
+
+
   return router;
-  
+
 };

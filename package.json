@@ -20,6 +20,7 @@
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "goodreads-api-node": "0.0.10",
+    "js-cookie": "^2.2.0",
     "knex": "^0.11.7",
     "knex-logger": "^0.1.0",
     "masonry-layout": "^4.2.2",
@@ -27,7 +28,9 @@
     "node-sass-middleware": "^0.9.8",
     "omdb-client": "^2.0.0",
     "pg": "^6.0.2",
+    "popper": "^1.0.1",
     "string-similarity": "^3.0.0",
+    "tippy.js": "^4.3.4",
     "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {
