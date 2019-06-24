@@ -6,6 +6,19 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
+  // function for editing displayname, works on postman, but not quite on the page
+  function editDisplayName(displayname, newDisplayName, cb) {
+    knex("users")
+      .where({displayname: displayname})
+      .update({displayname: newDisplayName})
+      .then((results) => {
+        return cb(null, results);
+      }).catch((error) => {
+        return cb(error, null);
+      });
+        
+  }
+
   function doesEmailExistinTable(email, cb) {
     knex
       .select("*")
@@ -29,11 +42,27 @@ module.exports = (knex) => {
       });
   });
 
+  // router.get("/error", (req, res) => {
+  //   res.render("error");
+  // });
+
   router.get("/profile", (req, res) => {
     res.render("profile");
   })
-
+  
+  // route for changing displayname, something is not working about this
   router.post("/profile", (req, res) => {
+    console.log(req.body.displayname, req.body.newDisplayName)
+    editDisplayName(req.body.displayname, req.body.newDisplayName, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+        return; 
+      } else {
+        res.status(201).json(results);
+        return;
+      }
+    })
+
     res.render("profile");
   })
 
@@ -54,7 +83,7 @@ module.exports = (knex) => {
         knex
           .insert({
             email: req.body.email,
-            displayname: 'req.body.password',
+            displayname: req.body.displayname,
             displaypic: 'https://vanillicon.com/v2/23463b99b62a72f26ed677cc556c44e8.svg'
           }, "id")
           .into("users")
@@ -70,11 +99,6 @@ module.exports = (knex) => {
     res.cookie('userID', "", -1);
     res.status(204).send();
   });
-
-  router.get("/error", (req, res) => {
-    res.render("error");
-  });
-
 
   return router;
 }

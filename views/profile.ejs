@@ -17,11 +17,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
 
   <title>to-do | profile</title>
-  <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/ico" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
 </head>
 
 <body>
@@ -53,23 +53,25 @@
         <p class="userName">Neezy</p>
       </div>
       <div class="buttons">
-        <div class="changeUsername">
-          <div class="form-group">
-            <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
-            <input class="form-control form-control-lg" type="text" placeholder="Pick a name! Any name!"
-              id="inputLarge">
-          </div>
-          <button type="button" class="btn btn-success btn-lg">Change Username</button>
+        <form action="/api/users/profile" method="post" class="changeUsername">
+          <div>
+            <div class="form-group">
+              <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
+              <input class="form-control form-control-lg" type="text" name="displayname"
+                placeholder="Pick a name! Any name!" id="inputLarge">
+              <button id="change-username" type="submit" class="btn btn-success btn-lg">Change Username</button>
+            </div>
+        </form>
+      </div>
+      <div class="changeAvatar">
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
         </div>
-        <div class="changeAvatar">
-          <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-          </div>
-          <button type="button" class="btn btn-success btn-lg">Change Avatar</button>
-        </div>
+        <button type="button" class="btn btn-success btn-lg">Change Avatar</button>
       </div>
     </div>
+  </div>
   </div>
 
   <footer>
