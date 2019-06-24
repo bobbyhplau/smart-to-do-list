@@ -51,20 +51,20 @@ module.exports = (knex) => {
   })
   
   // route for changing displayname, something is not working about this
-  // router.post("/profile", (req, res) => {
-  //   console.log(req.body.displayname, req.body.newDisplayName)
-  //   editDisplayName(req.body.displayname, req.body.newDisplayName, (err, results) => {
-  //     if (err) {
-  //       res.status(400).send('error:' + err);
-  //       return; 
-  //     } else {
-  //       res.status(201).json(results);
-  //       return;
-  //     }
-  //   })
+  router.post("/profile", (req, res) => {
+    console.log(req.body.displayname, req.body.newDisplayName)
+    editDisplayName(req.body.displayname, req.body.newDisplayName, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+        return; 
+      } else {
+        res.status(201).json(results);
+        return;
+      }
+    })
 
-  //   res.render("profile");
-  // })
+    res.render("profile");
+  })
 
   router.post("/", (req, res) => {
     doesEmailExistinTable(req.body.email, (user) => {
