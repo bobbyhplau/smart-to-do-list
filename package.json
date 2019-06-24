@@ -27,7 +27,9 @@
     "node-sass-middleware": "^0.9.8",
     "omdb-client": "^2.0.0",
     "pg": "^6.0.2",
+    "popper": "^1.0.1",
     "string-similarity": "^3.0.0",
+    "tippy.js": "^4.3.4",
     "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {
