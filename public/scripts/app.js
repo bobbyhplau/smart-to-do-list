@@ -94,13 +94,29 @@ $(() => {
   $('#todo-maker-button').unbind().on('click', function(event) {
     event.preventDefault();
     const input = $('#inputLarge').serialize();
-    console.log(input);
+    $('.spinner-border').css("display", "inline-block");
 
     $.post('/api/todos', input).then(function() {
+      $('.spinner-border').css("display", "none");
       $('#inputLarge').val('');
       clearCategories();
       populateCategories();
     });
+  });
+
+  $("#inputLarge").on('keyup', function(event) {
+
+    if ($("#inputLarge").is(":focus") && (event.keyCode == 13)) {
+      const input = $('#inputLarge').serialize();
+      $('.spinner-border').css("display", "inline-block");
+
+      $.post('/api/todos', input).then(function() {
+        $('.spinner-border').css("display", "none");
+        $('#inputLarge').val('');
+        clearCategories();
+        populateCategories();
+      });
+    }
   });
 
   //clicking logout will log me out
