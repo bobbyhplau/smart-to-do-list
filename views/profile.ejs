@@ -11,14 +11,16 @@
   <!--Bootstrap-->
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9NlqO4dP5KfioUGS568UFwM3lbWf3Uj3Qb7FBHuIuhLoDp3ZgAqPE1/MYLEBPZYM" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" type="text/css" />
 
   <!--Logo Font-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" />
 
+  <!-- Hacky clientside cookie support -->
+  <script type="application/javascript" src="../../scripts/js.cookie.js"></script>
+
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type='text/javascript' src='/scripts/userprofile.js'></script>
 
   <title>to-do | profile</title>
   <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
@@ -63,12 +65,15 @@
             </div>
         </form>
       </div>
-      <div class="changeAvatar">
-        <div class="form-group">
-          <label for="exampleInputFile">File input</label>
-          <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-        </div>
-        <button type="button" class="btn btn-success btn-lg">Change Avatar</button>
+        <form action="/api/users/profile" method="post" class="changeUsername">
+          <div>
+            <div class="form-group">
+              <label class="col-form-label col-form-label-lg" for="inputLarge2"></label>
+              <input class="form-control form-control-lg" type="text" name="displaypic"
+                placeholder="https://" id="inputLarge2">
+              <button id="change-avatar" type="submit" class="btn btn-success btn-lg">Change Avatar</button>
+            </div>
+        </form>
       </div>
     </div>
   </div>

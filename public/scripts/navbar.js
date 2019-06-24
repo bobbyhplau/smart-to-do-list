@@ -4,7 +4,6 @@ $(() => {
   $('.navbar-toggler').on('click', function(event) {
     let windo = $('.navbar-collapse');
     event.preventDefault();
-    console.log('hello-world');
     if (windo.css('display') === 'none') {
       windo.slideDown('fast');
     } else {
@@ -17,4 +16,7 @@ $(() => {
     event.preventDefault();
     $.post('/api/users', { email: 'test@test.com' }).then(function() {});
   });
+
+  $('.userGreeting').text(`Welcome back, ${Cookies.get('displayname')}!`);
+  $('.userIcon').attr('src', `${Cookies.get('displaypic')}`);
 });

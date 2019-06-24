@@ -6,10 +6,7 @@ const populateCategory = (category, containerID) => {
       category
     }
   }).done((todos) => {
-    console.log(todos);
     todos.forEach(function(item) {
-      //const tags = ['<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">']
-      //tags.push('<li class="mb-1">')
       const tags = [`<li class="list-group-item non-title" data-todo-id="${item.id}">`];
       tags.push('<div class="leftsideoftext">');
       tags.push('<i class="far fa-square"></i>');
@@ -69,6 +66,7 @@ $(() => {
   $('#todo-maker-button').unbind().on('click', function(event) {
     event.preventDefault();
     const input = $('#inputLarge').serialize();
+    console.log(input);
 
     $.post('/api/todos', input).then(function() {
       $('#inputLarge').val('');
@@ -91,7 +89,6 @@ $(() => {
     '.fa-trash-alt, .fa-square, .fa-edit, .fa-exchange-alt',
     function(event) {
       event.preventDefault();
-      console.log($(this).attr("class"));
       const tid = $(this).parents().parents().attr('data-todo-id');
       switch ($(this).attr("class")) {
         case 'fas fa-trash-alt':
