@@ -15,7 +15,7 @@
     - Delve into the aesthetics, colour scheme, and mood of the webpage.
         - We wanted a web that felt welcoming and we wanted an overall look that conveyed neutrality and might appeal to any user.
         - We experimented with different layouts and background patterns and felt that some earlier iterations of to-do geared towards either an explicitly more masculine look or an explicitly more feminine look and we wanted to find a balance.
-        - We were keen on using colours that weren't too loud and striking. We opted for cooler tones that were easier on the eyes, especialyl should a user spend some time browsing through their task list
+        - We were keen on using colours that weren't too loud and striking. We opted for cooler tones that were easier on the eyes, especially should a user spend some time browsing through their task list
     - In an ideal scenario, we would like a user to be able to upload their image of choice as their display picture
 
 ## Back-end
