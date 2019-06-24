@@ -5,7 +5,7 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
-  const { addTask, editTask, deleteTask, editCategory } = require('../lib/datahelpers.js')(knex);
+  const { addTask, editTask, deleteTask, editCategory, complete, notcomplete } = require('../lib/datahelpers.js')(knex);
   const categorize = require('../lib/smart-search.js').categorize;
 
   function checkForUser(userid, cb) {
@@ -22,7 +22,7 @@ module.exports = (knex) => {
       });
   }
 
-  router.get("/", (req, res) => {
+  router.get("/notfinished", (req, res) => {
     const userid = req.cookies["userID"]
     const category = req.query.category;
     checkForUser(userid, (user) => {
@@ -32,7 +32,30 @@ module.exports = (knex) => {
           .from("todos")
           .where({
             userid: user.id,
-            category: category
+            category: category,
+            isComplete: false
+          })
+          .then((results) => {
+            res.json(results);
+          });
+      } else {
+        res.redirect("/")
+      }
+    });
+  });
+
+  router.get("/finished", (req, res) => {
+    const userid = req.cookies["userID"]
+    const category = req.query.category;
+    checkForUser(userid, (user) => {
+      if (user) {
+        knex
+          .select("category", "text", "id")
+          .from("todos")
+          .where({
+            userid: user.id,
+            category: category,
+            isComplete: true
           })
           .then((results) => {
             res.json(results);
@@ -68,6 +91,26 @@ module.exports = (knex) => {
 
   router.put("/:id/toCategory/:category", (req, res) => {
     editCategory(req.params.id, req.params.category, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+      } else {
+        res.status(201).json(results);
+      }
+    });
+  });
+
+  router.put("/:id/complete", (req, res) => {
+    complete(req.params.id, (err, results) => {
+      if (err) {
+        res.status(400).send('error:' + err);
+      } else {
+        res.status(201).json(results);
+      }
+    });
+  });
+
+  router.put("/:id/notcomplete", (req, res) => {
+    notcomplete(req.params.id, (err, results) => {
       if (err) {
         res.status(400).send('error:' + err);
       } else {
