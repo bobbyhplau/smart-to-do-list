@@ -21,7 +21,7 @@
   <script type="text/javascript" src="/scripts/app.js"></script>
 
   <title>to-do | profile</title>
-  <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/ico" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/png" />
 </head>
 
 <body>
@@ -53,25 +53,25 @@
         <p class="userName">Neezy</p>
       </div>
       <div class="buttons">
-        <form action="/api/users/profile" method="post">
-        <div class="changeUsername">
-          <div class="form-group">
-            <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
-            <input class="form-control form-control-lg" type="text" name="displayname" placeholder="Pick a name! Any name!"
-              id="inputLarge">
+        <form action="/api/users/profile" method="post" class="changeUsername">
+          <div>
+            <div class="form-group">
+              <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
+              <input class="form-control form-control-lg" type="text" name="displayname"
+                placeholder="Pick a name! Any name!" id="inputLarge">
               <button id="change-username" type="submit" class="btn btn-success btn-lg">Change Username</button>
-          </div>
+            </div>
         </form>
+      </div>
+      <div class="changeAvatar">
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
         </div>
-        <div class="changeAvatar">
-          <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-          </div>
-          <button type="button" class="btn btn-success btn-lg">Change Avatar</button>
-        </div>
+        <button type="button" class="btn btn-success btn-lg">Change Avatar</button>
       </div>
     </div>
+  </div>
   </div>
 
   <footer>
