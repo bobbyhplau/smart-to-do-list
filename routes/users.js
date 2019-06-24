@@ -9,14 +9,14 @@ module.exports = (knex) => {
   // function for editing displayname, works on postman, but not quite on the page
   function editDisplayName(displayname, newDisplayName, cb) {
     knex("users")
-      .where({displayname: displayname})
-      .update({displayname: newDisplayName})
+      .where({ displayname: displayname })
+      .update({ displayname: newDisplayName })
       .then((results) => {
         return cb(null, results);
       }).catch((error) => {
         return cb(error, null);
       });
-        
+
   }
 
   function doesEmailExistinTable(email, cb) {
@@ -49,14 +49,14 @@ module.exports = (knex) => {
   router.get("/profile", (req, res) => {
     res.render("profile");
   })
-  
+
   // route for changing displayname, something is not working about this
   router.post("/profile", (req, res) => {
     console.log(req.body.displayname, req.body.newDisplayName)
     editDisplayName(req.body.displayname, req.body.newDisplayName, (err, results) => {
       if (err) {
         res.status(400).send('error:' + err);
-        return; 
+        return;
       } else {
         res.status(201).json(results);
         return;
