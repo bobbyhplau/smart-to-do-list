@@ -4,6 +4,7 @@ const drawDisplayName = function() {
 }
 
 const drawAvatar = function() {
+  $('.userIcon').attr('src', `${Cookies.get('displaypic')}`);
   $('.userAvatar').attr('src', `${Cookies.get('displaypic')}`);
   $('#inputLarge2').val(`${Cookies.get('displaypic')}`);
 }

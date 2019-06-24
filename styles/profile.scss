@@ -31,6 +31,21 @@ html {
         margin-left: 20px;
         margin-right: 20px;
       }
+
+      .userIcon {
+        transition: border 0.5s ease;
+        opacity: .9;
+        margin-right: 20px;
+        border-radius: 10px;
+        border: 2px solid #6ea595;
+      }
+
+      .userIcon:hover {
+        opacity: 1;
+        margin-right: 20px;
+        border-radius: 10px;
+        border: 2px solid #cae8e0;
+      }
     }
 
     .flexbox {
@@ -88,7 +103,8 @@ html {
             padding: 55px 10px;
             display: flex;
             flex-direction: column;
-            border-radius: 10px;;
+            border-radius: 10px;
+            ;
             border: 3px solid lavender;
           }
         }
