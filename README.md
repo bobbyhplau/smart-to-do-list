@@ -33,10 +33,10 @@ The project process involves a comprehensive undertaking of the many aspects of 
 
 ## Screenshots
 
-!["Description here](URL here)
-!["Description here](URL here)
-!["Description here](URL here)
-!["Description here](URL here)
+!["Screenshot of login page"](URL here)
+!["Screenshot of near-empty to-do list page"](URL here)
+!["Screenshot of filled-up to-do list page"](URL here)
+!["Screenshot of change display name page"](URL here)
 
 ## Dependencies
 
