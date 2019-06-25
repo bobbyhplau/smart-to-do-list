@@ -33,10 +33,10 @@ The project process involves a comprehensive undertaking of the many aspects of 
 
 ## Screenshots
 
-!["Screenshot of login page"](URL here)
-!["Screenshot of near-empty to-do list page"](URL here)
-!["Screenshot of filled-up to-do list page"](URL here)
-!["Screenshot of change display name page"](URL here)
+!["Screenshot of login page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/LoginPage.png?raw=true)
+!["Screenshot of near-empty to-do list page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/TodoPage_empty.png?raw=true)
+!["Screenshot of filled-up to-do list page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/TodoPage_full.png?raw=true)
+!["Screenshot of change display name page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/ChangeUserName.png?raw=true)
 
 ## Dependencies
 
