@@ -1,4 +1,5 @@
 # to-do!
+#### by Seth Marks, Carlo Javier, and Bobby Lau
 
 ## Overview
 
