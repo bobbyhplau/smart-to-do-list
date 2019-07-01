@@ -7,7 +7,7 @@ const router = express.Router();
 module.exports = (knex) => {
 
   // function for editing displayname, works on postman, but not quite on the page
-  function editDisplayName(displayname, newDisplayName, cb) {
+/*  function editDisplayName(displayname, newDisplayName, cb) {
     knex("users")
       .where({ displayname: displayname })
       .update({ displayname: newDisplayName })
@@ -18,6 +18,7 @@ module.exports = (knex) => {
       });
 
   }
+*/
 
   function doesEmailExistinTable(email, cb) {
     knex

@@ -191,4 +191,32 @@ $(document).ajaxStop(function() {
       });
     }
   })
+
+  tippy('.fa-edit', {
+    trigger: 'click',
+    content: '<input type="text" name="changedTodo" id="changeBar">',
+    interactive: true,
+    onShown: function() {
+      $('#changeBar').focus();
+      $('#changeBar').val("");
+      $("#changeBar").on('keyup', function(event) {
+
+        const tid = $('.tippy-active').parents().parents().attr('data-todo-id');
+        if ($("#changeBar").is(":focus") && (event.keyCode == 13)) {
+          let input = $('#changeBar').serialize();
+          input = input.substring(12, input.length);
+
+          $.ajax({
+            url: `/api/todos/${tid}/changeTodo/${input}`,
+            type: 'PUT'
+          }).then(function() {
+            tippy('.fa-edit').hide();
+            $('#inputLarge').val('');
+            clearCategories();
+            populateCategories();
+          });
+        }
+      });
+    }
+  })
 })

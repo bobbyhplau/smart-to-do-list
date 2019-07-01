@@ -34,9 +34,13 @@ The project process involves a comprehensive undertaking of the many aspects of 
 ## Screenshots
 
 !["Screenshot of login page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/LoginPage.png?raw=true)
+Be sure to login to use any feature of to-do
 !["Screenshot of near-empty to-do list page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/TodoPage_empty.png?raw=true)
+Try and add an item to our to-do list. The algorithm will automatically sort your item into the correct list.
 !["Screenshot of filled-up to-do list page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/TodoPage_full.png?raw=true)
+After you fill up your to-do list, you can edit, delete, or move your to-do item. When you've finished an item on your list, you can mark it complete.
 !["Screenshot of change display name page"](https://github.com/bobbyhplau/smart-to-do-list/blob/master/screenshots/ChangeUserName.png?raw=true)
+Checkout our user settings as well. Here you can change your display name and your display picture.
 
 ## Dependencies
 
@@ -50,6 +54,7 @@ The project process involves a comprehensive undertaking of the many aspects of 
 - ejs
 - express
 - goodreads-api-node
+- js-cookie
 - Knex
 - Knex-logger
 - masonry-layout
@@ -57,6 +62,7 @@ The project process involves a comprehensive undertaking of the many aspects of 
 - node-sass-middleware
 - omdb-client
 - pg
+- popper
 - string-similarity
+- tippy.js
 - yelp-fusion
-

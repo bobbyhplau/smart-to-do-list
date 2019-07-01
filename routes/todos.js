@@ -119,10 +119,10 @@ module.exports = (knex) => {
     });
   });
 
-  router.put("/:id", (req, res) => {
-    const editTodo = req.body;
-    editTodo.id = req.params.id;
-    editTask(editTodo, (err, results) => {
+  router.put("/:id/changeTodo/:newtodo", (req, res) => {
+    const text = req.params.newtodo;
+    const id = req.params.id;
+    editTask(text, id, (err, results) => {
       if (err) {
         res.status(400).send('error:' + err);
       } else {
